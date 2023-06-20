@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+{% block title %}Contact Us{% endblock %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+
+    <div class="row justify-content-center mx-2">
+        <div class="col-sm-4  mx-sm-2 my-2">
+            {{ form_row(form.name, { 'label': 'Neved' }) }}
+        </div>
+        <div class="col-sm-4 mx-sm-2 my-2">
+            {{ form_row(form.email, { 'label': 'E-mail címed' }) }}
+        </div>
+    </div>
+
+    <div class="row justify-content-center mx-2">
+        <div class="col-sm-8 rounded my-2">
+            {{ form_row(form.message, { 'label': 'Üzenet szövege' }) }}
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-sm-4 text-center">
+            {{ form_row(form.submit, { 'label': 'Küldés' }) }}
+        </div>
+    </div>
+
+            {{ form_rest(form) }}
+    </div>
+    
+    {{ form_end(form) }}
+
+{% endblock %}
