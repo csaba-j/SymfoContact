@@ -23,17 +23,13 @@ class ContactController extends AbstractController
             $contact = $form->getData();
             $entityManager->persist($contact);
             $entityManager->flush();
-            return $this->redirectToRoute('contact_success');
+            $this->addFlash('success', 'Köszönjük szépen a kérdésedet.
+            Válaszunkkal hamarosan keresünk a megadott e-mail címen.');
+            return $this->redirectToRoute('app_contact');
         }
 
         return $this->render('contact/index.html.twig', [
             'form' => $form,
         ]);
-    }
-
-    #[Route('/successful-contact', name: 'contact_success')]
-    public function contact_success(Request $request): Response
-    {
-        return $this->render('contact/success.html.twig', [ 'previous_url' => $request->headers->get('referer') ]);
     }
 }

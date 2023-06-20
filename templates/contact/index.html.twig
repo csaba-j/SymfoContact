@@ -6,29 +6,25 @@
 
 {% block body %}
 
-<div class="col-sm-12 text-center my-5 mx-4">
-    <h1>Leave a message to us.</h1>
-    <h3>We'll get in touch with you as soon as we can.</h3>
-</div>
-
     {{ form_start(form) }}
 
-    <div class="row justify-content-center">
-            <div class="col-sm-4">
-                {{ form_row(form.name) }}
+    <div class="row justify-content-center mx-2">
+            <div class="col-sm-4  mx-sm-2 my-2">
+                {{ form_row(form.name, { 'label': 'Neved' }) }}
             </div>
-            <div class="col-sm-4">
-                {{ form_row(form.email) }}
+            <div class="col-sm-4 mx-sm-2 my-2">
+                {{ form_row(form.email, { 'label': 'E-mail címed' }) }}
             </div>
-                        </div>
-    <div class="row justify-content-center">
-        <div class="col-sm-8">
-            {{ form_row(form.message) }}
+    </div>
+    <div class="row justify-content-center mx-2">
+        <div class="col-sm-8 rounded my-2">
+            {{ form_row(form.message, { 'label': 'Üzenet szövege' }) }}
         </div>
     </div>
+
     <div class="row justify-content-center">
         <div class="col-sm-4 text-center">
-            {{ form_row(form.submit) }}
+            {{ form_row(form.submit, { 'label': 'Küldés' }) }}
         </div>
     </div>
 

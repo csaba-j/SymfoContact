@@ -21,7 +21,7 @@ class ContactType extends AbstractType
                 'attr' => ['rows' => 5, 'cols' => 50]
                 ])
             ->add('submit', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-primary btn-lg']
+                'attr' => ['class' => 'btn btn-primary btn-lg px-5']
                 ])
         ;
     }
