@@ -12,9 +12,8 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body style="width:100vw;height:80vh">
+    <body>
         {% block body %}{% endblock %}
-
         {% for message in app.flashes('success') %}
             <div class="alert alert-success row mx-sm-5 mx-auto text-center justify-content-center">
                 {{ message }}
