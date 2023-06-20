@@ -23,34 +23,7 @@ class Contact
 
     #[ORM\Column(length: 255)]
     private ?string $message = null;
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata): void
-    {
-        $metadata->addPropertyConstraint('name', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
-        $metadata->addPropertyConstraint('name', new Assert\Length([
-            'min' => 3,
-            'max' => 64,
-            'minMessage' => 'A nevednek legalább {{ limit }} karakter hosszúnak kell lennie.',
-            'maxMessage' => 'A neved nem lehet hosszabb, mint {{ limit }} karakter.',
-        ]));
-
-        $metadata->addPropertyConstraint('email', new Assert\Email([
-            'message' => 'A megadott e-mail cím nem valós e-mail cím!',
-        ]));
-        $metadata->addPropertyConstraint('email', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
-        $metadata->addPropertyConstraint('email', new Assert\Length([
-            'max' => 64,
-            'maxMessage' => 'Az e-mail címed nem lehet hosszabb, mint {{ limit }} karakter.',
-        ]));
-        $metadata->addPropertyConstraint('message', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
-        $metadata->addPropertyConstraint('message', new Assert\Length([
-            'min' => 10,
-            'max' => 255,
-            'minMessage' => 'Az üzenetednek legalább {{ limit }} karakter hosszúnak kell lennie.',
-            'maxMessage' => 'Az üzeneted nem lehet hosszabb, mint {{ limit }} karakter.',
-        ]));
-    }
-
+    
     public function getId(): ?int
     {
         return $this->id;
