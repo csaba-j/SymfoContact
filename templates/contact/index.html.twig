@@ -6,24 +6,31 @@
 
 {% block body %}
 
-<div class="col-sm-12 text-center my-5 mx-4">
+<div class="col-sm-12 text-center my-5 mx-sm-auto mx-4">
     <h1>Leave us a message.</h1>
     <h3>We'll get in touch with you as soon as we can.</h3>
 </div>
 
     {{ form_start(form) }}
 
-    <div class="row justify-content-center">
-            <div class="col-sm-4">
+    <div class="row justify-content-center mx-2">
+            <div class="col-sm-4  mx-sm-2 my-2">
                 {{ form_row(form.name) }}
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mx-sm-2 my-2">
                 {{ form_row(form.email) }}
             </div>
                         </div>
-    <div class="row justify-content-center">
-        <div class="col-sm-8">
+    <div class="row justify-content-center mx-2">
+        <div class="col-sm-8 rounded my-2">
             {{ form_row(form.message) }}
+        </div>
+    </div>
+
+    <div class="row justify-content-center mb-4 mx-sm-auto mx-2">
+        <div class="col-sm-8 text-center">
+        <input type="checkbox" aria-label="Checkbox for accepting terms of use and privacy policy" required>
+        I have read and accept the <a href="#">terms of use</a> and <a href="#">privacy policy</a>.
         </div>
     </div>
     <div class="row justify-content-center">
