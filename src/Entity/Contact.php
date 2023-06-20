@@ -26,28 +26,28 @@ class Contact
 
     public static function loadValidatorMetadata(ClassMetadata $metadata): void
     {
-        $metadata->addPropertyConstraint('name', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('name', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
         $metadata->addPropertyConstraint('name', new Assert\Length([
             'min' => 3,
             'max' => 64,
-            'minMessage' => 'Your name must be at least {{ limit }} characters long',
-            'maxMessage' => 'Your name cannot be longer than {{ limit }} characters',
+            'minMessage' => 'A nevednek legalább {{ limit }} karakter hosszúnak kell lennie.',
+            'maxMessage' => 'A neved nem lehet hosszabb, mint {{ limit }} karakter.',
         ]));
 
         $metadata->addPropertyConstraint('email', new Assert\Email([
-            'message' => 'The given e-mail address is not a valid address.',
+            'message' => 'A megadott e-mail cím nem valós e-mail cím!',
         ]));
-        $metadata->addPropertyConstraint('email', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('email', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
         $metadata->addPropertyConstraint('email', new Assert\Length([
             'max' => 64,
-            'maxMessage' => 'Your name cannot be longer than {{ limit }} characters',
+            'maxMessage' => 'Az e-mail címed nem lehet hosszabb, mint {{ limit }} karakter.',
         ]));
-        $metadata->addPropertyConstraint('message', new Assert\NotBlank());
+        $metadata->addPropertyConstraint('message', new Assert\NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']));
         $metadata->addPropertyConstraint('message', new Assert\Length([
             'min' => 10,
             'max' => 255,
-            'minMessage' => 'Your message must be at least {{ limit }} characters long',
-            'maxMessage' => 'Your message cannot be longer than {{ limit }} characters',
+            'minMessage' => 'Az üzenetednek legalább {{ limit }} karakter hosszúnak kell lennie.',
+            'maxMessage' => 'Az üzeneted nem lehet hosszabb, mint {{ limit }} karakter.',
         ]));
     }
 
