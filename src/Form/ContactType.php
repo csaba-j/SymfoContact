@@ -29,7 +29,7 @@ class ContactType extends AbstractType
             ->add('email', TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'Hiba! Kérjük töltsd ki az összes mezőt!']),
-                    new Email(['message' => 'A megadott e-mail cím nem valós e-mail cím!']),
+                    new Email(['message' => 'Adj meg egy valós e-mail címet!']),
                     new Length(['max' => 64,'maxMessage' => 'Az e-mail címed nem lehet hosszabb, mint {{ limit }} karakter.'])
                 ]
             ])
