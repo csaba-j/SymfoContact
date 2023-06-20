@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
 
 {% block title %}Contact Us{% endblock %}
 
@@ -8,10 +10,25 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello!</h1>
+    <div class="col-sm-12">
+        <h1>Hello!</h1>
+    </div>
 
-    {{ form(form) }}
+{{ form_start(form) }}
 
+<div class="row">
+        <div class="col-sm-4">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="col-sm-4">
+            {{ form_row(form.message) }}
+        </div>
+        {{ form_rest(form) }}
 </div>
+
+{{ form_end(form) }}
+
 {% endblock %}
