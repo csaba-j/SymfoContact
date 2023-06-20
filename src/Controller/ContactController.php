@@ -32,10 +32,4 @@ class ContactController extends AbstractController
             'form' => $form,
         ]);
     }
-
-    #[Route('/successful-contact', name: 'contact_success')]
-    public function contact_success(Request $request): Response
-    {
-        return $this->render('contact/success.html.twig', [ 'previous_url' => $request->headers->get('referer') ]);
-    }
 }
